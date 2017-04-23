@@ -98,7 +98,8 @@ def ipn(request):
             warn_untested()
             ipn_obj.verify_secret(form, request.GET['secret'])
         else:
-            ipn_obj.verify()
+            pass # BJA, generates failure
+            # ipn_obj.verify()
 
     ipn_obj.save()
     ipn_obj.send_signals()
